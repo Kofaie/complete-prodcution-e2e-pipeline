@@ -5,6 +5,7 @@ pipeline{
     tools {
         jdk 'Java17'
         maven 'MAVEN3'
+        
     }
   
     stages{
@@ -39,7 +40,7 @@ pipeline{
         stage("Sonarqube Analysis") {
             steps {
                 script {
-                    withSonarQubeEnv(credentialsId: 'MySonarToken') {
+                    withSonarQubeEnv('Sonar') {
                         sh "mvn sonar:sonar"
                     }
                 }
