@@ -51,7 +51,7 @@ pipeline{
         stage("Quality Gate") {
             steps {
                 script {
-                    waitForQualityGate abortPipeline: false, 'Sonar'
+                    waitForQualityGate abortPipeline: true
                 }
             }
 
